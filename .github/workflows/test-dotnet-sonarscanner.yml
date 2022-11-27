@@ -11,6 +11,11 @@ on:
         options:
         - windows-latest
         - ubuntu-latest
+      action-version:
+        description: 'Branch/tag/version of action to use'
+        required: false
+        type: string
+        default: 'main'
 
 jobs:
   test_and_report_coverage:
@@ -18,7 +23,7 @@ jobs:
     name: use chill-viking/dotnet-sonar-scanner
     steps:
       - uses: actions/checkout@v3
-      - uses: chill-viking/dotnet-sonar-scanner@v1-beta
+      - uses: chill-viking/dotnet-sonar-scanner@${{ inputs.action-version }}
         name: use composite action
         with:
           sonar-project-key: 'chill-viking-org_github-actions-tests-dotnet-sonar-scanner'
