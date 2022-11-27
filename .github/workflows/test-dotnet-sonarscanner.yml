@@ -1,0 +1,19 @@
+name: Test chill-viking/dotnet-sonar-scanner
+
+on: workflow_dispatch
+
+jobs:
+  test_and_report_coverage:
+    runs-on: windows-latest
+    name: use chill-viking/dotnet-sonar-scanner
+    steps:
+      - uses: actions/checkout@v3
+      - uses: chill-viking/dotnet-sonar-scanner@v1-beta
+        name: use composite action
+        with:
+          sonar-project-key: 'chill-viking-org_github-actions-tests-dotnet-sonar-scanner'
+          sonar-org-key: 'chill-viking-org'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_DOTNET }}
+          project-version: '1.0.0-alpha'
+          working-directory: './dotnet-sonar-scanner'
