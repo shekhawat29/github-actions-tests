@@ -20,8 +20,8 @@ jobs:
       - uses: chill-viking/dotnet-sonar-scanner@test
         name: use composite action
         with:
-          sonar-project-key: 'chill-viking-org_github-actions-tests-dotnet-sonar-scanner'
-          sonar-org-key: 'chill-viking-org'
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_DOTNET }}
+          sonar-project-key: '.net'
+          sonar-org-key: '.net'
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           project-version: '1.0.0-alpha'
           working-directory: './dotnet-sonar-scanner'
