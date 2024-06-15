@@ -17,7 +17,7 @@ jobs:
     runs-on: ${{ inputs.pool }}
     name: use chill-viking/dotnet-sonar-scanner
     steps:
-      - uses: chill-viking/dotnet-sonar-scanner@test
+      - uses: chill-viking/dotnet-sonar-scanner@v1.0.0
         name: use composite action
         with:
           sonar-project-key: 'chill-viking-org_github-actions-tests-dotnet-sonar-scanner'
